@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop Animation</title>
+    <style>
+        @keyframes moveRight{
+            0%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(800px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        .animated{
+           width: 50px;
+           height: 50px;
+           background-color: bisque;
+           animation: moveRight 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated">
+      
+    </div>
+</body>
+</html>

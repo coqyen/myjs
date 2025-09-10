@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="slogan" >showText</button>
+    <button id="image" >showImages</button>
+    <hr>
+    <canvas id="txtCanvas" width="500" height="70" style="border: 1px red solid;"></canvas>
+    <br>
+    <canvas id="imgCanvas" width="500" height="500" style="border: 1px green solid;"></canvas>
+
+    <script>
+        document.getElementById('slogan').addEventListener('click',function(){
+            const canvas=document.getElementById('txtCanvas');
+            const ctx=canvas.getContext('2d');
+            ctx.fillStyle='red';
+            ctx.font='24px Arial';
+            ctx.fillText('再忙也要喝一杯咖啡',50,50);
+        });
+
+        document.getElementById('image').addEventListener('click',function(){
+            const canvas=document.getElementById('imgCanvas');
+            const ctx=canvas.getContext('2d');
+            const img=new Image();
+            img.onload=()=>{
+                ctx.drawImage(img,0,0,500,500);
+            }
+            img.src='images/drink/1.jpg';
+        });
+    </script>
+    
+</body>
+</html>

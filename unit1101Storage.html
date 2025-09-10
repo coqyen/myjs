@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   
+    <input type="number" placeholder="溫度" id="temp"><br>
+    <input type="number" placeholder="濕度" id="humidity"><br>
+    <button onclick="setData()" >SET</button>
+    <button onclick="getData()" >GET</button>
+    <button onclick="myClear()" >CLEAR</button>
+    <div id="demo"></div>
+
+     <a href="unit1102Storage.html">Show localStorage Data</a>
+    
+  <script>
+    function setData(){
+      window.localStorage.setItem('temp',temp.value);
+      window.localStorage.setItem('humidity',humidity.value);
+      window.alert('localStorage SET OK!!')
+    }
+    function getData(){
+      var t=window.localStorage.getItem('temp');
+      var h=window.localStorage.getItem('humidity');
+      demo.innerHTML=`溫度:${t}<br>
+                      濕度:${h}<br>`
+    }
+    function myClear(){
+      window.localStorage.clear()
+      window.alert("localStorage Clear OK!!")
+    }
+
+  </script>
+  
+</body>
+</html>

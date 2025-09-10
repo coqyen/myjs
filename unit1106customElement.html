@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  
+  <script>
+    class PickerColor extends HTMLElement{
+      constructor(){
+        super();
+        this.attachShadow({mode:'open'})
+         }
+      connectedCallback(){
+        const saveColor=localStorage.getItem('color') || '#000000';
+        this.shadowRoot.innerHTML=`
+          <input type="color" value="${saveColor}">
+
+        
+        `
+        ;
+        this.shadowRoot.querySelector('input').addEventListener('input',(e)=>)
+      }
+    }
+      customElements.define('custom-button',MyButton);
+  </script>
+</body>
+</html>

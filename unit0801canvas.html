@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>~~CANVAS~~</h1>
+    <hr>
+    <canvas id="demo" width="500" height="400" style="border: 1px green solid;"></canvas>
+    <script>
+        const demo=document.getElementById('demo');
+        const ctx=demo.getContext('2d')
+
+        ctx.fillStyle='pink';
+        ctx.fillRect(50,50,100,75)
+
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(500,400);
+        ctx.strokeStyle='green';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(350,350,50,0, Math.PI*5);
+        ctx.fillStyle='red';
+        ctx.fill();
+
+        let g=ctx.createLinearGradient(100,300,100,0);
+        g.addColorStop(0,'green');
+        g.addColorStop(1,'yellow');
+        ctx.fillStyle=g;
+        ctx.fillRect(200,150,200,100);
+
+        
+;    </script>
+</body>
+</html>

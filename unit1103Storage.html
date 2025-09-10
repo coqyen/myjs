@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   
+    <input type="number" placeholder="溫度" id="temp"><br>
+    <input type="number" placeholder="濕度" id="humidity"><br>
+    <button onclick="setData()" >SET</button>
+    <button onclick="getData()" >GET</button>
+    <button onclick="myClear()">CLEAR</button>
+    <div id="demo"></div>
+
+     <a href="unit1104Storage.html">Show sessionStorage Data</a>
+    
+  <script>
+    function setData(){
+      window.sessionStorage.setItem('temp',temp.value);
+      window.sessionStorage.setItem('humidity',humidity.value);
+      window.alert('sessionStorage SET OK!!')
+    }
+    function getData(){
+      var t=window.sessionStorage.getItem('temp');
+      var h=window.sessionStorage.getItem('humidity');
+      demo.innerHTML=`溫度:${t}<br>
+                      濕度:${h}<br>`
+    }
+    function myClear(){
+      window.sessionStorage.clear()
+      window.alert("sessionStorage Clear OK!!")
+    }
+
+  </script>
+  
+</body>
+</html>
